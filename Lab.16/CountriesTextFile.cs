@@ -46,6 +46,9 @@ namespace Lab._16
 
             while (doAgain)
             {
+                TextInfo formattedCountry = new CultureInfo("en-US", false).TextInfo;
+                newCountry = formattedCountry.ToTitleCase(newCountry);
+
                 using (var textWriter = new StreamWriter(textFilePath, append: true))
                 {
                     textWriter.WriteLine($"\r{newCountry}");
